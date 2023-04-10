@@ -102,7 +102,6 @@ class TodoConsole {
             }))
         }).then((answers) => {
             let completedTasks = answers['complete'];
-            console.log(completedTasks);
             this.todoCollection.getTodoItems(true).forEach((item) => this.todoCollection.markComplete(item.id, completedTasks.find((id) => id === item.id) != undefined));
             this.promptUser();
         });
