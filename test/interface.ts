@@ -27,12 +27,20 @@ let gender:string='female'
 let subject:string='javascript'
 let courseCompleted:boolean=false
 
+//enum은 연관된 아이템들을 함께묶어서 표현할 수 있는 수단
+
+enum GenderType{
+    Male='male',
+    Female='female',
+    TransGender='transgender',
+}
+
 interface Student { 
     readonly studentId:number
     //읽기전용 프로퍼티는 수정불가
     studentName:string
     age?:number
-    gender:string
+    gender:GenderType
     subject:string
     couseCompleted:boolean
     addComment?(comment:string):string
@@ -45,7 +53,7 @@ function getStudentDetails(studentId:number):Student{
         studentId:12345,
         studentName:'jaehyun',
         // age:25,
-        gender:'female',
+        gender:GenderType.Female,
         subject:'javascript',
         couseCompleted:false
     }
@@ -59,13 +67,14 @@ function getStudentDetails(studentId:number):Student{
 function saveStudentDetails(student:Student):void{
     // console.log(student.studentId++) 
     //studentid 프로퍼티는 읽기전용이기 때문에 수정불가
+    console.log(student)
 }
 
 const student1={
     studentId:12345,
     studentName:'jaehyun',
-    // age:25,
-    gender:'female',
+    // age:25, age는 조건부 프로퍼티라 있어도 되고 없어도됨
+    gender:GenderType.Female,
     subject:'javascript',
     couseCompleted:false}
 
