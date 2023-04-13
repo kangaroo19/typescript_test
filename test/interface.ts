@@ -79,3 +79,24 @@ const student1={
     couseCompleted:false}
 
 saveStudentDetails(student1)
+
+
+
+interface IUser{
+    name:string,
+    age:number,
+    isValid:boolean
+}
+
+let userArr:IUser[]=[ //각각의 요소가 IUser의 형태를 갖는 배열
+    {
+        name:'jaehyun',
+        age:25,
+        isValid:true
+    },
+    {
+        name:'jaehyun2',
+        age:252,
+        isValid:true
+    }
+]

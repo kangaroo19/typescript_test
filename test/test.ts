@@ -5,5 +5,7 @@
 
 let collection : number[] | string="123"
 
-console.log(collection.split(""))
+//union type 을 사용함으로써 문자열과 숫자 동시에 가지는 배열 선언가능
+let array:(string|number)[]=['Apple',1,2,'Banana']
+
 
